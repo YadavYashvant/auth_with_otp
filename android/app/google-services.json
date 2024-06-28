@@ -1,0 +1,162 @@
+{
+  "project_info": {
+    "project_number": "11221154319",
+    "project_id": "fir-demo-f5f77",
+    "storage_bucket": "fir-demo-f5f77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11221154319:android:94541b9a2764056de4417a",
+        "android_client_info": {
+          "package_name": "com.example.auth_with_otp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdTe5XfsR0h8zGv2FcJl6TEQsOH6W2lss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11221154319-o2tlvd4jspkrm2pe8f5s8np7qma71385.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newRidan"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11221154319:android:22fc8d6157f3ad2de4417a",
+        "android_client_info": {
+          "package_name": "com.ridan.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdTe5XfsR0h8zGv2FcJl6TEQsOH6W2lss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11221154319-o2tlvd4jspkrm2pe8f5s8np7qma71385.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newRidan"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11221154319:android:1e6271859a2c7db3e4417a",
+        "android_client_info": {
+          "package_name": "com.yashvant.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdTe5XfsR0h8zGv2FcJl6TEQsOH6W2lss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11221154319-o2tlvd4jspkrm2pe8f5s8np7qma71385.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newRidan"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11221154319:android:c204974d117c43dbe4417a",
+        "android_client_info": {
+          "package_name": "com.yashvant.firebase_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11221154319-useqi8gvbonvor9bh2tpnhfv7e6j5auc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yashvant.firebase_demo",
+            "certificate_hash": "15d982ad4612afc8b726573399b76668f6283d05"
+          }
+        },
+        {
+          "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdTe5XfsR0h8zGv2FcJl6TEQsOH6W2lss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11221154319-fktk8g3ovv2air2e1g5q5ifn0r1dk2eo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11221154319-o2tlvd4jspkrm2pe8f5s8np7qma71385.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newRidan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
