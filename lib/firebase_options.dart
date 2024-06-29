@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '11221154319',
     projectId: 'fir-demo-f5f77',
     storageBucket: 'fir-demo-f5f77.appspot.com',
-    androidClientId: '11221154319-useqi8gvbonvor9bh2tpnhfv7e6j5auc.apps.googleusercontent.com',
+    androidClientId: '11221154319-0a8vkv4pnl9dkl0652541ilul27lajc6.apps.googleusercontent.com',
     iosClientId: '11221154319-p7a91b9hvo2ldvgh7esquff1jpiootaf.apps.googleusercontent.com',
     iosBundleId: 'com.example.authWithOtp',
   );

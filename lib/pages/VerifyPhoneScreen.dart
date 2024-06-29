@@ -1,6 +1,7 @@
 import 'package:auth_with_otp/pages/ProfileSelectionScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 class VerifyPhoneScreen extends StatefulWidget {
 
@@ -30,6 +31,7 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       appBar: AppBar(
         title: Text('Verify Phone'),
         centerTitle: true,
@@ -46,13 +48,31 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
             SizedBox(height: 8),
             Text('Code is sent to 8094504845'),
             SizedBox(height: 16),
-            TextField(
-              controller: otpcontroller,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter the 6-digit code',
-              ),
+            Pinput(
+              length: 6,
+              defaultPinTheme: defaultPinTheme,
+
+              controller: _pinPutController,
+
+              pinAnimationType: PinAnimationType.fade,
+              onSubmitted: (pin) async {
+                try {
+                  await FirebaseAuth.instance
+                      .signInWithCredential(PhoneAuthProvider.credential(
+                      verificationId: _verificationCode!, smsCode: pin))
+                      .then((value) async {
+                    if (value.user != null) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProfileSelectionScreen()),
+                              (route) => false);
+                    }
+                  });
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+
+                }
+              },
             ),
             SizedBox(height: 16),
             TextButton(
@@ -62,7 +82,7 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
               child: Text('Didn\'t receive the code? Request Again'),
             ),
             SizedBox(height: 16),
-            ElevatedButton(
+            /*ElevatedButton(
               onPressed: () {
                 AuthCredential phoneAuthCredential =
                 PhoneAuthProvider.credential(
@@ -71,25 +91,47 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
                 signin(phoneAuthCredential);
               },
               child: Text('VERIFY AND CONTINUE'),
-            ),
+            ),*/
           ],
         ),
       ),
     );
   }
 
-  void signin(AuthCredential phoneAuthCredential) async {
-    try {
-      final authCred = await _auth.signInWithCredential(phoneAuthCredential);
+  _verifyPhone() async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: '+91${widget.phone}',
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await FirebaseAuth.instance
+              .signInWithCredential(credential)
+              .then((value) async {
+            if (value.user != null) {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileSelectionScreen()),(route) => false);
+            }
+          });
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          print(e.message);
+        },
+        codeSent: (String? verficationID, int? resendToken) {
+          setState(() {
+            _verificationCode = verficationID;
+          });
+        },
+        codeAutoRetrievalTimeout: (String verificationID) {
+          setState(() {
+            _verificationCode = verificationID;
+          });
+        },
+        timeout: Duration(seconds: 120));
+  }
 
-      if (authCred.user != null) {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ProfileSelectionScreen()));
-      }
-    } on FirebaseAuthException catch (e) {
-      print(e.message);
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Some Error Occured. Try Again Later')));
-    }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _verifyPhone();
   }
 }
