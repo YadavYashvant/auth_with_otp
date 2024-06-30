@@ -39,14 +39,14 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Verify Phone',
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 8),
-            Text('Code is sent to 8094504845'),
+            Text('Code is sent to ${widget.phone}'),
             SizedBox(height: 16),
             Pinput(
               length: 6,
@@ -54,7 +54,7 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
 
               controller: _pinPutController,
 
-              pinAnimationType: PinAnimationType.fade,
+              pinAnimationType: PinAnimationType.scale,
               onSubmitted: (pin) async {
                 try {
                   await FirebaseAuth.instance
