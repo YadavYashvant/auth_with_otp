@@ -12,8 +12,6 @@ A flutter app to implement authentication using otp with firebase authentication
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
   git clone https://github.com/YadavYashvant/auth_with_otp.git
 ```
