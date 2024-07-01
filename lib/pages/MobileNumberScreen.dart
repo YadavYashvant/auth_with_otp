@@ -2,6 +2,7 @@ import 'package:auth_with_otp/pages/VerifyPhoneScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MobileNumberScreen extends StatefulWidget {
 
@@ -21,16 +22,26 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'Please enter your mobile number',
-              style: TextStyle(fontSize: 18),
+              style: GoogleFonts.roboto(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 32),
-            Text('You\'ll receive a 6 digit code to verify next.'),
+            Text(
+                'You\'ll receive a 6 digit code to verify next.',
+                style: GoogleFonts.roboto(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+
+            ),
             SizedBox(height: 32),
             Row(
               children: [
@@ -38,7 +49,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                 SizedBox(width: 8),*/
                 Expanded(
                   child: TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Phone Number',
                       prefix: Padding(
                         padding: EdgeInsets.all(4),
