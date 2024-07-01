@@ -10,3 +10,18 @@ A flutter app to implement authentication using otp with firebase authentication
 | |![scr4](https://github.com/YadavYashvant/auth_with_otp/assets/113130559/c8f6f562-a5ff-4cca-8f6b-a332db4833fc) | ![scr5](https://github.com/YadavYashvant/auth_with_otp/assets/113130559/2e351f9d-fde7-4def-811c-127c9d5cc0a9) | ![scr6](https://github.com/YadavYashvant/auth_with_otp/assets/113130559/98f17b73-c58c-4b38-97c0-fa8bd4a2a5bd)
 |-------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
 
+## Installation
+
+Install my-project with npm
+
+```bash
+  git clone https://github.com/YadavYashvant/auth_with_otp.git
+```
+Using flutterfire cll - 
+
+```bash
+  flutterfire configure
+```
+
+Then setup firebase project and also enable phone authentication
+    
