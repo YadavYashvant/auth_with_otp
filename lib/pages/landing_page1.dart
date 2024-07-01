@@ -82,7 +82,6 @@ class _LandingPage1State extends State<LandingPage1> {
                         onPressed: () {
                           // Navigate to the next screen
                         },
-
                         child: Text('Next'),
                       ),*/
                     ],

@@ -1,6 +1,7 @@
 import 'package:auth_with_otp/pages/VerifyPhoneScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class MobileNumberScreen extends StatefulWidget {
 
@@ -15,10 +16,10 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text('Mobile Number 001'),
+      appBar: AppBar(
+        // title: Text('Mobile Number 001'),
         centerTitle: true,
-      ),*/
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -33,8 +34,8 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
             SizedBox(height: 32),
             Row(
               children: [
-                Text('+91'),
-                SizedBox(width: 8),
+                /*Text('+91'),
+                SizedBox(width: 8),*/
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
@@ -52,12 +53,13 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               ],
             ),
             SizedBox(height: 16),
-            ElevatedButton(
+            GFButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => VerifyPhoneScreen(_controller.text)));
               },
-              child: Text('CONTINUE'),
+              text: 'CONTINUE',
+              size: GFSize.LARGE,
             ),
           ],
         ),
