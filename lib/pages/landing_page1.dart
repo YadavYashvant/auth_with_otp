@@ -1,7 +1,11 @@
+import 'package:auth_with_otp/components/primarybtn.dart';
+import 'package:auth_with_otp/constants/Colors.dart';
+import 'package:buttons_flutter/buttons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:auth_with_otp/pages/MobileNumberScreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LandingPage1 extends StatefulWidget {
   const LandingPage1({Key? key}) : super(key: key);
@@ -68,22 +72,22 @@ class _LandingPage1State extends State<LandingPage1> {
                         },
                       ),
                       SizedBox(height: 32),
-                      GFButton(
+                      /*Button(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => MobileNumberScreen()),
                           );
                         },
-                        text: "Next",
-                        size: GFSize.LARGE,
-                      )
-                      /*ElevatedButton(
-                        onPressed: () {
-                          // Navigate to the next screen
-                        },
                         child: Text('Next'),
-                      ),*/
+                      )*/
+                      PrimaryButton(
+                          onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MobileNumberScreen()),
+                        );
+                      }, text: "NEXT")
                     ],
                   ),
                 ],

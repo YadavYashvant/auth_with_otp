@@ -1,6 +1,9 @@
+import 'package:auth_with_otp/components/primarybtn.dart';
+import 'package:auth_with_otp/constants/Colors.dart';
 import 'package:auth_with_otp/pages/ProfileSelectionScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
 class VerifyPhoneScreen extends StatefulWidget {
@@ -19,12 +22,13 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
   final TextEditingController _pinPutController = TextEditingController();
 
   final defaultPinTheme = PinTheme(
-    width: 56,
-    height: 56,
+    width: 58,
+    height: 58,
     textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      border: Border.all(color: Colors.black),
-      borderRadius: BorderRadius.circular(20),
+      // border: Border.all(color: Colors.black),
+      borderRadius: BorderRadius.zero,
+      color: msky,
     ),
   );
 
@@ -33,7 +37,7 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-        title: Text('Verify Phone'),
+        // title: Text('Verify Phone'),
         centerTitle: true,
       ),
       body: Padding(
@@ -43,11 +47,20 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
           children: [
             Text(
               'Verify Phone',
-              style: TextStyle(fontSize: 18),
+              style: GoogleFonts.roboto(
+                  fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(height: 8),
-            Text('Code is sent to ${widget.phone}'),
             SizedBox(height: 16),
+            Text(
+                'Code is sent to ${widget.phone}',
+              style: GoogleFonts.roboto(
+                  fontSize: 18,
+                  // fontWeight: FontWeight.bold,
+                ),
+            ),
+            SizedBox(height: 32),
             Pinput(
               length: 6,
               defaultPinTheme: defaultPinTheme,
@@ -77,21 +90,19 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
             SizedBox(height: 16),
             TextButton(
               onPressed: () {
-                // Resend code
+                _verifyPhone();
               },
               child: Text('Didn\'t receive the code? Request Again'),
             ),
-            SizedBox(height: 16),
-            /*ElevatedButton(
-              onPressed: () {
-                AuthCredential phoneAuthCredential =
-                PhoneAuthProvider.credential(
-                    verificationId: verificationID,
-                    smsCode: otpcontroller.text);
-                signin(phoneAuthCredential);
-              },
-              child: Text('VERIFY AND CONTINUE'),
-            ),*/
+            SizedBox(height: 40),
+            PrimaryButton(
+                onPressed: () {
+                  // It is temporary solution to navigate to ProfileSelectionScreen
+                  Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileSelectionScreen()),(route) => false);
+                },
+                text: "VERIFY AND CONTINUE")
           ],
         ),
       ),

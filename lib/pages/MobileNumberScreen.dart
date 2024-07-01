@@ -1,3 +1,4 @@
+import 'package:auth_with_otp/components/primarybtn.dart';
 import 'package:auth_with_otp/pages/VerifyPhoneScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -29,16 +30,17 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
             Text(
               'Please enter your mobile number',
               style: GoogleFonts.roboto(
-                fontSize: 28,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 32),
             Text(
                 'You\'ll receive a 6 digit code to verify next.',
                 style: GoogleFonts.roboto(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  // fontWeight: FontWeight.bold,
                 ),
 
             ),
@@ -50,6 +52,10 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                 Expanded(
                   child: TextField(
                     decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.zero),
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
                       hintText: 'Phone Number',
                       prefix: Padding(
                         padding: EdgeInsets.all(4),
@@ -63,15 +69,25 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            GFButton(
+            SizedBox(height: 48),
+            PrimaryButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => VerifyPhoneScreen(_controller.text)));
+                },
+                text: "CONTINUE")
+            /*GFButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => VerifyPhoneScreen(_controller.text)));
               },
               text: 'CONTINUE',
               size: GFSize.LARGE,
-            ),
+              textStyle: GoogleFonts.roboto(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),*/
           ],
         ),
       ),
